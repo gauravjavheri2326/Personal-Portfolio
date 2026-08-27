@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@font-face {
+    font-family: pop;
+    src: url("../assets/Fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: pop2;
+    src: url("../assets/Fonts/Poppins-Thin.ttf");
+}
+
+@font-face {
+    font-family: pop3;
+    src: url("../assets/Fonts/Poppins-Light.ttf");
+}
+
+@font-face {
+    font-family: pop4;
+    src: url("../assets/Fonts/Poppins-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: lato;
+    src: url("../assets/Fonts/Lato-Bold.ttf");
+}
+
+@font-face {
+    font-family: pop5;
+    src: url("../assets/Fonts/Poppins-Bold.ttf");
+}
+
+@font-face {
+    font-family: pop6;
+    src: url("../assets/Fonts/Poppins-ExtraBold.ttf");
+}
+
+*::selection {
+    background-color: #c8b3f6b2;
+    padding: 0;
+    margin: 0;
+}
+
+html, body{  
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background-color: #bfc0d1;
+    /* overflow-x:hidden; */
+}
+
+
+
+@theme{
+    --font-pop: pop, "sans-serif";
+    --font-pop-thin: pop2, "sans-serif";
+    --font-pop-light: pop3, "sans-serif";
+    --font-pop-sb: pop4, "sans-serif";
+    --font-pop-b: pop5, "sans-serif";
+    --font-pop-xb: pop6, "sans-serif";
+    --font-lato-b: lato, "sans-serif";
+}
+
+@layer utilities {
+    .main-heading {
+        @apply font-pop-xb tracking-tight uppercase text-[18vw] leading-[16vw] lg:text-[5rem] lg:leading-20 xl:text-[6.2rem]  2xl:text-[7rem] 2xl:leading-25.5  xl:leading-22.5 
+    }
+}
