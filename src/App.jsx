@@ -5,6 +5,7 @@ import Navbar from "./sections/Navbar.jsx"
 import ProjectSection from "./sections/ProjectSection.jsx"
 import ServicesSection from "./sections/ServicesSection.jsx"
 import { useRef, useState } from "react"
+import { Analytics } from '@vercel/analytics/react'
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
   console.log(lenisRef)
   return (
     <main className="overflow-x-hidden">
+      <Analytics />
       <Navbar
         isActive={isActive}
         setIsActive={setIsActive}

@@ -1,9 +1,10 @@
-import spyltImg from "/public/assets/Imgs/spylt.png"
-import spyltVdo from "/public/assets//Vdo/SPYLT Milk.mp4"
-import todoImg from "/public/assets/Imgs/Todo.png"
-import todoVdo from "/public/assets/Vdo/Todo.mp4"
-import galleryImg from "/public/assets/Imgs/Gallery.png"
-import galleryVdo from "/public/assets/Vdo/Gallery App.mp4"
+import spyltImg from "../../public/assets/Imgs/spylt.png"
+import spyltVdo from "../../public/assets//Vdo/SPYLT Milk.mp4"
+import todoImg from "../../public/assets/Imgs/Todo.png"
+import todoVdo from "../../public/assets/Vdo/Todo.mp4"
+import galleryImg from "../../public/assets/Imgs/Gallery.png"
+import galleryVdo from "../../public/assets/Vdo/Gallery App.mp4"
+import interviewAiImg from "../../public/assets/Imgs/Inteview ai.png"
 
 const projects = [
     {
@@ -13,6 +14,14 @@ const projects = [
         vdo: spyltVdo,
         objectFill: true,
         link: "https://chug-spylt.netlify.app/"
+    },
+     {
+        name: "Interview Ai",
+        desc: "MERN + GenAI app that generates personalized interview reports using a job description, resume, and self-description.",
+        img: interviewAiImg,
+        vdo: null,
+        objectFill: true,
+        link: "https://interviewreportgenerator-ai.vercel.app/"
     },
     {
         name: "Todo List",

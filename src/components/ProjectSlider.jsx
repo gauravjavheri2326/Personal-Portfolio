@@ -1,7 +1,6 @@
 import { projects } from "../constants"
 import gsap from 'gsap'
 import { useGSAP } from "@gsap/react"
-import { ScrollTrigger } from 'gsap/all'
 import { useRef } from "react"
 import { useMediaQuery } from "react-responsive"
 
@@ -93,14 +92,14 @@ const ProjectSlider = () => {
                             onMouseEnter={onHover}
                             onMouseLeave={onLeave}
                         >
-                            <div className="w-full h-[70%] rounded-md overflow-hidden relative bg-black">
+                            <div className="w-full min-h-[70%] rounded-md overflow-hidden relative bg-black">
             
                                 <img src={project.img} alt="" className="project-img h-[102%] w-full object-cover absolute z-5"/>
                                 <video src={project.vdo} className={`project-video h-[102%] w-full ${project.objectFill === true ? "object-fill" : "object-cover"} absolute`} muted playsInline loop></video>
                                
                             </div>
-                            <div className="leading-0 text-white">
-                                <div className="font-pop-b 2xl:text-[3vw] xl:text-[3.5vw] lg:text-[4vw] md:text-[4.5vw] text-[8.5vw] 2xl:mb-[2vw] lg:mb-[2.5vw] mb-[3vw] ">
+                            <div className="leading-[2.5vw] text-white">
+                                <div className="font-pop-b  2xl:text-[3vw] xl:text-[3.5vw] lg:text-[4vw] md:text-[4.5vw] text-[8.5vw] 2xl:mb-[2vw] lg:mb-[2.5vw] mb-[3vw] ">
                                     <a href={project.link}>
                                         <h2
                                             className="project-heading cursor-pointer"
