@@ -19,7 +19,7 @@ const NavA = ({a, ids, isActive, setIsActive}) => {
           ease: "power1.inOut"
         })
         .to(".nav-a", {
-          yPercent: -100,
+          yPercent: -70,
           display: "block",
           opacity: 1,
           duration: 0.7,
@@ -56,7 +56,7 @@ const NavA = ({a, ids, isActive, setIsActive}) => {
       className= "a-cont overflow-hidden lg:overflow-auto border-b border-[#ffffff39] lg:border-0">
         <a
           onClick={() => setIsActive(false)} href={ids}
-          className={`nav-a font-pop block pb-10 w-screen text-center lg:text-[white] translate-y-full lg:translate-y-0 hover:text-[#60519b] lg:opacity-100 lg:pb-0 lg:w-auto lg:block`}
+          className={`nav-a  font-pop block pb-10 w-screen text-center lg:text-[white] translate-y-full lg:translate-y-0 hover:text-[#60519b] lg:opacity-100 lg:pb-0 lg:w-auto lg:block`}
         >
           {a}
         </a>
