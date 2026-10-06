@@ -1,14 +1,21 @@
-import { projects } from "../constants"
+import { projects } from "../constants/index.js"
 import gsap from 'gsap'
 import { useGSAP } from "@gsap/react"
 import { useRef } from "react"
 import { useMediaQuery } from "react-responsive"
+import { Link } from "react-router"
+import { useContext } from "react"
+import { ProjectContext } from "../project.context.jsx"
 
 const ProjectSlider = () => {
+
+    const { showBack, setShowBack } = useContext(ProjectContext)
+
     const slideRef = useRef()
     const isTablet = useMediaQuery({
         query: "(max-width: 1000px)"
     })
+
     useGSAP(() => {
         const scrollAmmount = slideRef.current.scrollWidth - window.innerWidth
         if(!isTablet) {
@@ -83,6 +90,7 @@ const ProjectSlider = () => {
             {
                 projects.map((project) => {
                     return(
+
                         <div
                             key={project.name}
                             style={{
@@ -92,15 +100,20 @@ const ProjectSlider = () => {
                             onMouseEnter={onHover}
                             onMouseLeave={onLeave}
                         >
+
                             <div className="w-full min-h-[70%] rounded-md overflow-hidden relative bg-black">
             
                                 <img src={project.img} alt="" className="project-img h-[102%] w-full object-cover absolute z-5"/>
                                 <video src={project.vdo} className={`project-video h-[102%] w-full ${project.objectFill === true ? "object-fill" : "object-cover"} absolute`} muted playsInline loop></video>
                                
                             </div>
+
                             <div className="leading-[2.5vw] text-white">
                                 <div className="font-pop-b  2xl:text-[3vw] xl:text-[3.5vw] lg:text-[4vw] md:text-[4.5vw] text-[8.5vw] 2xl:mb-[2vw] lg:mb-[2.5vw] mb-[3vw] ">
-                                    <a href={project.link}>
+                                    <Link 
+                                        to={`/project-info/${project.name}`}
+                                        onClick={() => setShowBack(true)}
+                                    >
                                         <h2
                                             className="project-heading cursor-pointer"
                                             onMouseEnter={headingHover}
@@ -108,7 +121,7 @@ const ProjectSlider = () => {
                                         >
                                             {project.name}
                                         </h2>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="leading-[1.2em] 2xl:text-[1em]">
                                     {project.desc}

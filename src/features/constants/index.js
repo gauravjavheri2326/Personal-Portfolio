@@ -1,10 +1,10 @@
-import spyltImg from "../../public/assets/Imgs/spylt.png"
-import spyltVdo from "../../public/assets//Vdo/SPYLT Milk.mp4"
-import todoImg from "../../public/assets/Imgs/Todo.png"
-import todoVdo from "../../public/assets/Vdo/Todo.mp4"
-import galleryImg from "../../public/assets/Imgs/Gallery.png"
-import galleryVdo from "../../public/assets/Vdo/Gallery App.mp4"
-import interviewAiImg from "../../public/assets/Imgs/Inteview ai.png"
+import spyltImg from "../../../public/assets/Imgs/spylt.png"
+import spyltVdo from "../../../public/assets/Vdo/SPYLT Milk.mp4"
+import todoImg from "../../../public/assets/Imgs/Todo.png"
+import todoVdo from "../../../public/assets/Vdo/Todo.mp4"
+import galleryImg from "../../../public/assets/Imgs/Gallery.png"
+import galleryVdo from "../../../public/assets/Vdo/Gallery App.mp4"
+import interviewAiImg from "../../../public/assets/Imgs/Inteview ai.png"
 
 const projects = [
     {

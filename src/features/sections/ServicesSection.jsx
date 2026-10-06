@@ -1,4 +1,4 @@
-import Services from "/src/components/Services"
+import Services from "../components/Services.jsx"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import {ScrollTrigger} from "gsap/ScrollTrigger"

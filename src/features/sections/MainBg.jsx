@@ -1,7 +1,7 @@
 
 import {useEffect, useState, useRef} from "react"
-import MainBgCircles from "../components/MainBgCircles"
-import MainContent from "../components/MainContent"
+import MainBgCircles from "../components/MainBgCircles.jsx"
+import MainContent from "../components/MainContent.jsx"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 
