@@ -39,7 +39,7 @@ function App() {
 
           <Outlet />
 
-          <div className="bg-[#bfc0d1] h-screen"></div>
+          {/* <div className="bg-[#bfc0d1] h-screen"></div> */}
         </ReactLenis>
       </ProjectContextProvider>
     </main>

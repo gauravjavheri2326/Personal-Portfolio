@@ -118,9 +118,16 @@ const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
             <div className={`w-full text-[3vh] hidden lg:flex flex-col justify-center items-center gap-10 lg:text-[1rem] lg:gap-8 lg:justify-end lg:flex-row `}>
               <Link 
                 to={"/"}
-                onClick={() => setShowBack(false)}
+                onClick={() => {
+                  setShowBack(false)
+                  setTimeout(() => {
+                    document.getElementById("project-section")?.scrollIntoView({
+                      behavior: "smooth"
+                    })
+                  }, 1000)
+                }}
               >
-                <CircleChevronLeft className="hover:text-[#60519b]"/>
+                <CircleChevronLeft className="hover:text-[#60519b]  "/>
               </Link>
             </div>
 
