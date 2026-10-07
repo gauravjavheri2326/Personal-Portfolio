@@ -127,7 +127,7 @@ const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
                   }, 1000)
                 }}
               >
-                <CircleChevronLeft className="hover:text-[#60519b]"/>
+                <CircleChevronLeft className="hover:text-[#60519b]"/> hi
               </Link>
             </div>
 
