@@ -97,7 +97,7 @@ const ProjectSlider = () => {
                             style={{
                                 clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
                             }}
-                            className="project-card bg-[linear-gradient(130deg,#7546E8,#1E202C)] 2xl:h-[80vh] xl:h-[65vh] lg:h-[42vw] md:h-[75vw] h-[95vw] 2xl:w-[36vw] xl:w-[40vw] lg:w-[40vw] md:w-[90vw] w-full flex flex-col 2xl:p-[1vw] xl:p-[1.3vw] lg:p-[1.2vw] md:p-[2vw] p-[2.5vw] 2xl:gap-y-[2vw] lg:gap-y-[2vw] gap-y-[3.5vw] rounded-md lg:rounded-none"
+                            className="project-card bg-[linear-gradient(130deg,#7546E8,#1E202C)] 2xl:h-[75vh] xl:h-[65vh] lg:h-[42vw] md:h-[75vw] h-[95vw] 2xl:w-[36vw] xl:w-[40vw] lg:w-[40vw] md:w-[90vw] w-full flex flex-col 2xl:p-[1vw] xl:p-[1.3vw] lg:p-[1.2vw] md:p-[2vw] p-[2.5vw] 2xl:gap-y-[2vw] lg:gap-y-[2vw] gap-y-[3.5vw] rounded-md lg:rounded-none"
                             onMouseEnter={onHover}
                             onMouseLeave={onLeave}
                         >
