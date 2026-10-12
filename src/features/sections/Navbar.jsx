@@ -4,7 +4,7 @@ import { useContext, useEffect, useRef } from "react"
 import { useMediaQuery } from "react-responsive"
 import { useGSAP } from "@gsap/react"
 import { ProjectContext } from "../project.context.jsx"
-import { Link } from "react-router"
+import { Link, useNavigate } from "react-router"
 
 import gsap from 'gsap'
 
@@ -14,19 +14,21 @@ import gsap from 'gsap'
 
 const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
 
-  const { showBack, setShowBack } = useContext(ProjectContext)
+  const { showBack, setShowBack, setNavigate } = useContext(ProjectContext)
+
+  const navigate = useNavigate()
 
   const navRef = useRef()
   useEffect(() => {
-    
+
     const lenis = lenisRef.current?.lenis
 
     if (!lenis) return;
 
-    if (isActive) {
-      lenis.stop()
-    } else {
+    if (!isActive) {
       lenis.start()
+    } else {
+      lenis.stop()
     }
 
     document.body.style.overflowY = isActive ? "hidden" : "auto"
@@ -93,7 +95,20 @@ const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
             >
               <Link
                 to={"/"}
-                onClick={() => setShowBack(false)}
+                onClick={(e) => {
+                  e.preventDefault()
+
+                  setNavigate(true)
+                  setTimeout(() => {
+                    navigate("/")
+                    setShowBack(false)
+                  }, 500)
+                  setTimeout(() => {
+                    document.getElementById("project-section")?.scrollIntoView({
+                      behavior: "smooth"
+                    })
+                  }, 1200)
+                } }
               >
                 <CircleChevronLeft/>
               </Link>
@@ -116,15 +131,21 @@ const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
           :
 
             <div className={`w-full text-[3vh] hidden lg:flex flex-col justify-center items-center gap-10 lg:text-[1rem] lg:gap-8 lg:justify-end lg:flex-row `}>
-              <Link 
+              <Link
                 to={"/"}
-                onClick={() => {
-                  setShowBack(false)
+                onClick={(e) => {
+                  e.preventDefault()
+
+                  setNavigate(true)
+                  setTimeout(() => {
+                    navigate("/")
+                    setShowBack(false)
+                  }, 500)
                   setTimeout(() => {
                     document.getElementById("project-section")?.scrollIntoView({
                       behavior: "smooth"
                     })
-                  }, 1000)
+                  }, 1200)
                 }}
               >
                 <CircleChevronLeft className="hover:text-[#60519b]"/>

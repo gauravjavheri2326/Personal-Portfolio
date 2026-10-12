@@ -3,13 +3,15 @@ import gsap from 'gsap'
 import { useGSAP } from "@gsap/react"
 import { useRef } from "react"
 import { useMediaQuery } from "react-responsive"
-import { Link } from "react-router"
+import { Link, useNavigate } from "react-router"
 import { useContext } from "react"
 import { ProjectContext } from "../project.context.jsx"
 
 const ProjectSlider = () => {
 
-    const { showBack, setShowBack } = useContext(ProjectContext)
+    const { setNavigate, setShowBack } = useContext(ProjectContext)
+
+    const navigate = useNavigate()
 
     const slideRef = useRef()
     const isTablet = useMediaQuery({
@@ -113,12 +115,21 @@ const ProjectSlider = () => {
 
                             {/* About project (Project Name & Used Skills) */}
                             <div className="2xl:leading-[1.5vw] xl:leading-[1.2vw] md:leading-[2.5vw] leading-[7vw] text-white">
-
+                                
                                 {/* name of project */}
                                 <div className="font-pop-b  2xl:text-[3vw] xl:text-[3.5vw] lg:text-[4vw] md:text-[8vw] text-[8.5vw] 2xl:mb-[2vw] lg:mb-[2.5vw] mb-[3vw] ">
                                     <Link 
                                         to={`/project-info/${project.name}`}
-                                        onClick={() => setShowBack(true)}
+                                        onClick={(e) => {
+                                            e.preventDefault()
+
+                                            setTimeout(() => {
+                                                navigate(`/project-info/${project.name}`)
+                                                setShowBack(true)
+                                            }, 500)
+                                            
+                                            setNavigate(true)
+                                        }}
                                     >
                                         <h2
                                             className="project-heading cursor-pointer"
@@ -131,11 +142,11 @@ const ProjectSlider = () => {
                                 </div>
 
                                 {/* used skills  */}
-                                <div className=" flex flex-wrap 2xl:gap-[1vw] xl:gap-[1vw] lg:gap-[1vw] md:gap-[1.5vw] gap-[1.5vw] min-h-[20%] ">
+                                <div className=" flex flex-wrap 2xl:gap-[0.8vw] xl:gap-[1vw] lg:gap-[1vw] md:gap-[1.5vw] gap-[1.5vw] min-h-[20%] ">
                                     {
                                         project.skills.map((skill) => {
                                             return (
-                                                <div className="bg-[#C8B3F6] text-[#1E202C] rounded-full flex items-center 2xl:text-[1vw] xl:text-[1.2vw] lg:text-[1.5vw] md:text-[2.5vw] text-[3.5vw] 2xl:h-[2.5vw] xl:h-[2.2vw] lg:h-[2.5vw] md:h-[4vw] h-[5.5vw] 2xl:px-[1vw] xl:px-[1vw] lg:px-[1vw] md:px-[2.5vw] px-[2.5vw] ">
+                                                <div className="bg-[#C8B3F6] text-[#1E202C] rounded-full flex items-center 2xl:text-[1vw] xl:text-[1.2vw] lg:text-[1.5vw] md:text-[2.5vw] text-[3.5vw] 2xl:h-[2.2vw] xl:h-[2.2vw] lg:h-[2.5vw] md:h-[4vw] h-[5.5vw] 2xl:px-[1vw] xl:px-[1vw] lg:px-[1vw] md:px-[2.5vw] px-[2.5vw] ">
                                                     {skill}
                                                 </div>
                                             )

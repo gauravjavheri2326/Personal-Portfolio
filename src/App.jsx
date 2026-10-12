@@ -5,6 +5,7 @@ import { useRef, useState } from "react"
 import { Analytics } from '@vercel/analytics/react'
 import { Outlet } from "react-router"
 import { ProjectContextProvider } from "./features/project.context.jsx"
+import NavigationEffect from "./features/components/NavigationEffect.jsx"
 
 
 
@@ -41,6 +42,7 @@ function App() {
 
           {/* <div className="bg-[#bfc0d1] h-screen"></div> */}
         </ReactLenis>
+        <NavigationEffect/>
       </ProjectContextProvider>
     </main>
   )
