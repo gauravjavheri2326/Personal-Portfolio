@@ -16,11 +16,14 @@ const NavigationEffect = () => {
 
             tl.to(".navigate-page", {
                 clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-                duration: .5
+                duration: .5,
+                ease: "circ.in"            
             })
             .to(".navigate-page", {
                 clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-                duration: .4
+                duration: .4,
+                delay: .4,
+                ease: "circ.out"
             })
             .to(".navigate-page", {
                 clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",

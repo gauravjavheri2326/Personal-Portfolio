@@ -1,6 +1,5 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
-import { SplitText } from "gsap/all"
 import { useMediaQuery } from "react-responsive"
 import { ScrollTrigger } from "gsap/all"
 import ProjectSlider from "../components/ProjectSlider.jsx"

@@ -19,6 +19,8 @@ const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
   const navigate = useNavigate()
 
   const navRef = useRef()
+  const initialHeight = useRef(null)
+
   useEffect(() => {
 
     const lenis = lenisRef.current?.lenis
@@ -44,23 +46,38 @@ const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
   })
 
   useGSAP(() => {
-    if(isTablet) {
-      if(isActive) {
-        gsap.to(".nav-div", {
-          height: "100vh",
-          ease: "expo.inOut"
-        })
-      }
 
-      if(!isActive) {
-        gsap.to(".nav-div", {
-          height: "7vh",
-          delay: .8,
-          ease: "expo.inOut"
-        })
-      }
+    if (!isTablet) return
+
+    const nav = ".nav-div"
+    const navElement = document.querySelector(nav)
+
+    // Capture initial height on first run
+    if (!initialHeight.current && navElement) {
+      initialHeight.current = getComputedStyle(navElement).height
     }
-  }, [isActive])
+
+    if (isActive) {
+      gsap.to(nav, {
+        height: "100vh",
+        delay: 0,
+        ease: "expo.inOut",
+        duration: 0.8
+      })
+    } else {
+      gsap.to(nav, {
+        height: initialHeight.current,
+        delay: 0.8,
+        ease: "expo.inOut",
+        duration: 0.8,
+        onComplete: () => {
+          // Clear inline height to let Tailwind classes take over
+          navElement.style.height = ""
+        }
+      })
+    }
+
+  }, [isActive, isTablet])
   
   return (
     <div 
@@ -68,7 +85,7 @@ const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
       }}
       ref={navRef} 
-      className={`${isActive ? " bg-[#00000020]" : " bg-[#ffffff00]"} h-[7vh] nav-div text-white backdrop-blur-sm w-full flex justify-between  px-7  fixed z-50 border-b border-[#ffffff39] lg:bg-[#ffffff00] lg:h-15 lg:px-13 xl:px-20`}
+      className={`${isActive ? " bg-[#00000020]" : " bg-[#ffffff00]"} md:h-[7vw] h-[14.5vw]  nav-div text-white backdrop-blur-sm w-full flex justify-between  px-7  fixed z-50 border-b border-[#ffffff39] lg:bg-[#ffffff00] lg:h-15 lg:px-13 xl:px-20`}
     >
         {/* Logo  */}
         <h1 className="absolute font-pop text-[2.5vh] upper mt-[2vh]">GJ</h1>
@@ -91,7 +108,7 @@ const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
           :
 
             <div
-              className={` ${isActive ? "hidden" : "block"} absolute right-7 lg:hidden  mt-[2vh] md:w-[4.5vw] h-[3vh]`}
+              className={` ${isActive ? "hidden" : "block"} absolute right-7 lg:hidden mt-[2vh] md:w-[4.5vw] h-[3vh]`}
             >
               <Link
                 to={"/"}
