@@ -85,7 +85,7 @@ const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
       }}
       ref={navRef} 
-      className={`${isActive ? " bg-[#00000020]" : " bg-[#ffffff00]"} md:h-[7vw] h-[14.5vw]  nav-div text-white backdrop-blur-sm w-full flex justify-between  px-7  fixed z-50 border-b border-[#ffffff39] lg:bg-[#ffffff00] lg:h-15 lg:px-13 xl:px-20`}
+      className={`${isActive ? " bg-[#00000020]" : " bg-[#ffffff00]"} md:h-[7vw] h-[14.5vw] nav-div text-white backdrop-blur-sm w-full flex justify-between  px-7  fixed z-50 border-b border-[#ffffff39] lg:bg-[#ffffff00] lg:h-15 lg:px-13 xl:px-20`}
     >
         {/* Logo  */}
         <h1 className="absolute font-pop text-[2.5vh] upper mt-[2vh]">GJ</h1>

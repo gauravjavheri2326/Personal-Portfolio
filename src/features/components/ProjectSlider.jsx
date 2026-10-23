@@ -108,7 +108,7 @@ const ProjectSlider = () => {
                             <div className="w-full min-h-[70%] rounded-md overflow-hidden relative bg-black">
             
                                 <img src={project.img} alt="" className="project-img h-[102%] w-full object-cover absolute z-5"/>
-                                <video src={project.vdo} className={`project-video h-[102%] w-full ${project.objectFill === true ? "object-fill" : "object-cover"} absolute`} muted playsInline loop></video>
+                                <video src={project.vdo} className={`project-video h-[102%] w-full ${project.objectFill === true ? "object-fill" : "object-cover"} absolute`} x></video>
                                
                             8</div>
 

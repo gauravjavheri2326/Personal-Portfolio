@@ -9,7 +9,7 @@ import interviewAiImg from "../../../public/assets/Imgs/Inteview ai.png"
 const projects = [
     {
         name: "SPYLT Milk",
-        desc: "An interactive, animation-rich product site that blends bold design with smooth GSAP transitions to create an engaging user experience.",
+        desc: "An interactive and visually immersive product website inspired by SPYLT Milk, designed to showcase a modern beverage brand through bold typography, vibrant colors, and eye-catching visuals. The website combines creative layouts, smooth GSAP animations, dynamic scroll-triggered effects, and seamless transitions to create an engaging user experience. With responsive design and carefully crafted visual elements, the project focuses on bringing the brand's personality to life while delivering a smooth and memorable browsing experience across different screen sizes.",
         skills: ["React", "Tailwind CSS", "JavaScript", "GSAP", "Lenis"],
         img: spyltImg,
         vdo: spyltVdo,
