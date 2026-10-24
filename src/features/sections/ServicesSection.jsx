@@ -68,7 +68,9 @@ const ServicesSection = (props) => {
     
     <div ref={container} id="services" className=' bg-black min-h-[70vh] pb-5 lg:pb-0 lg:min-h-screen w-full text-white'>
       <div className='flex overflow-hidden flex-col pl-2 lg:pl-0 pb-10 lg:items-center'>
-         <h1 id="h1" className='main-heading mt-5 [-webkit-text-stroke:1px_#7546e8] bg-clip-text text-transparent bg-[linear-gradient(55deg,#7546e8_10%,black_65%)]  lg:mt-8    xl:mt-10 '>My Quality Services</h1>
+
+        <h1 id="h1" className='main-heading lg:mt-8    xl:mt-10 mt-5 [-webkit-text-stroke:1px_#7546e8] bg-clip-text text-transparent bg-[linear-gradient(55deg,#7546e8_10%,black_65%)]   xl:py-[1.5vw] '>My Quality Services</h1>
+        
         <p id="para" className='xl:text-xl lg:text-base md:text-[3.5vw] text-[4vw]  '>Services which will help you to make decision!</p>
       </div>
       <div className='px-5 lg:px-20 xl:px-40'>

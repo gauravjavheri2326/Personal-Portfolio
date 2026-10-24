@@ -88,7 +88,7 @@ const ProjectSlider = () => {
 
   return (
     <div ref={slideRef} className="lg:h-screen min-h-screen w-full font-pop">
-        <div className="h-full w-full flex lg:flex-row flex-col items-center flex-nowrap 2xl:gap-22 lg:gap-[8vw] md:gap-[8vw] gap-10">
+        <div className="h-full w-full flex lg:flex-row flex-col items-center flex-nowrap xl:gap-22 lg:gap-[8vw] md:gap-[8vw] gap-10">
             {
                 projects.map((project) => {
                     return(
@@ -99,7 +99,7 @@ const ProjectSlider = () => {
                             style={{
                                 clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
                             }}
-                            className="project-card bg-[linear-gradient(130deg,#7546E8,#1E202C)] 2xl:h-[75vh] xl:h-[65vh] lg:h-[42vw] md:h-[75vw] h-[95vw] 2xl:w-[36vw] xl:w-[40vw] lg:w-[40vw] md:w-[90vw] w-full flex flex-col 2xl:p-[1vw] xl:p-[1.3vw] lg:p-[1.2vw] md:p-[2vw] p-[2.5vw] 2xl:gap-y-[2vw] lg:gap-y-[2vw] gap-y-[3.5vw] rounded-md lg:rounded-none"
+                            className="project-card bg-[linear-gradient(130deg,#7546E8,#1E202C)] 2xl:h-[75vh] xl:h-[38vw] lg:h-[42vw] md:h-[75vw] h-[95vw] 2xl:w-[36vw] xl:w-[36vw] lg:w-[40vw] md:w-[90vw] w-full flex flex-col 2xl:p-[1vw] xl:p-[1vw] lg:p-[1.2vw] md:p-[2vw] p-[2.5vw] 2xl:gap-y-[2vw] lg:gap-y-[2vw] gap-y-[3.5vw] rounded-md lg:rounded-none"
                             onMouseEnter={onHover}
                             onMouseLeave={onLeave}
                         >
@@ -114,10 +114,10 @@ const ProjectSlider = () => {
 
 
                             {/* About project (Project Name & Used Skills) */}
-                            <div className="2xl:leading-[1.5vw] xl:leading-[1.2vw] md:leading-[2.5vw] leading-[7vw] text-white">
+                            <div className="2xl:leading-[1.5vw] xl:leading-[1.5vw] md:leading-[2.5vw] leading-[7vw] text-white">
                                 
                                 {/* name of project */}
-                                <div className="font-pop-b  2xl:text-[3vw] xl:text-[3.5vw] lg:text-[4vw] md:text-[8vw] text-[8.5vw] 2xl:mb-[2vw] lg:mb-[2.5vw] mb-[3vw] ">
+                                <div className="font-pop-b  2xl:text-[3vw] xl:text-[3vw] lg:text-[4vw] md:text-[8vw] text-[8.5vw] xl:mb-[2vw] lg:mb-[2.5vw] mb-[3vw] ">
                                     <Link 
                                         to={`/project-info/${project.name}`}
                                         onClick={(e) => {
@@ -142,11 +142,11 @@ const ProjectSlider = () => {
                                 </div>
 
                                 {/* used skills  */}
-                                <div className=" flex flex-wrap 2xl:gap-[0.8vw] xl:gap-[1vw] lg:gap-[1vw] md:gap-[1.5vw] gap-[1.5vw] min-h-[20%] ">
+                                <div className=" flex flex-wrap 2xl:gap-[0.8vw] xl:gap-[0.8vw] lg:gap-[1vw] md:gap-[1.5vw] gap-[1.5vw] min-h-[20%] ">
                                     {
                                         project.skills.map((skill) => {
                                             return (
-                                                <div className="bg-[#C8B3F6] text-[#1E202C] rounded-full flex items-center 2xl:text-[1vw] xl:text-[1.2vw] lg:text-[1.5vw] md:text-[2.5vw] text-[3.5vw] 2xl:h-[2.2vw] xl:h-[2.2vw] lg:h-[2.5vw] md:h-[4vw] h-[5.5vw] 2xl:px-[1vw] xl:px-[1vw] lg:px-[1vw] md:px-[2.5vw] px-[2.5vw] ">
+                                                <div className="bg-[#C8B3F6] text-[#1E202C] rounded-full flex items-center 2xl:text-[1vw] xl:text-[1vw] lg:text-[1.5vw] md:text-[2.5vw] text-[3.5vw] 2xl:h-[2.2vw] xl:h-[2.2vw] lg:h-[2.5vw] md:h-[4vw] h-[5.5vw] 2xl:px-[1vw] xl:px-[1vw] lg:px-[1vw] md:px-[2.5vw] px-[2.5vw] ">
                                                     {skill}
                                                 </div>
                                             )

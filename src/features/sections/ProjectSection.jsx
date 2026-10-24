@@ -53,7 +53,7 @@ const ProjectSection = () => {
     <section id="project-section">
         <div
             
-            className=" min-h-screen flex flex-col lg:flex-row gap-10 2xl:gap-35 xl:gap-30 lg:gap-25  px-2 2xl:px-60 lg:px-30 relative "
+            className=" min-h-screen flex flex-col lg:flex-row gap-10 xl:gap-35 lg:gap-25  px-2 xl:px-60 lg:px-30 relative "
         >
             <div className="w-full lg:w-1/2 flex flex-col gap-0 justify-center items-start lg:items-center pt-[5vh] lg:pt-0">   
                 <div className="slider-title overflow-x-hidden">

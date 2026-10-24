@@ -34,6 +34,10 @@
     src: url("../assets/Fonts/Poppins-ExtraBold.ttf");
 }
 
+@theme {
+    --breakpoint-2xl: 160rem;
+}
+
 *::selection {
     background-color: #c8b3f6b2;
     padding: 0;
@@ -62,6 +66,6 @@ html, body{
 
 @layer utilities {
     .main-heading {
-        @apply font-pop-xb tracking-tight uppercase text-[18vw] leading-[16vw] lg:text-[5rem] lg:leading-20 xl:text-[6.2rem]  2xl:text-[7rem] 2xl:leading-25.5  xl:leading-22.5 
+        @apply font-pop-xb tracking-tight uppercase text-[18vw] 2xl:leading-25.5  xl:leading-[6.6vw] leading-[16vw] lg:text-[5rem] lg:leading-20 xl:text-[7.5vw]  2xl:text-[7rem]  
     }
 }
