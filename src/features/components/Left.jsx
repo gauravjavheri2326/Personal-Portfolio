@@ -85,7 +85,7 @@ const Left = () => {
         <a href="#project-section">
           <div
             ref={leftBtn}
-            className="bg-[linear-gradient(55deg,#7546e8_25%,white_85%)] text-[#1e202c] rounded-full cursor-pointer xl:px-13 xl:py-3 lg:px-11 lg:py-3 md:px-[5vw] md:py-[2vw] px-9 py-3 "
+            className="primary-btn xl:px-13 xl:py-3 lg:px-11 lg:py-3 md:px-[5vw] md:py-[2vw] px-9 py-3 "
           >
             View My Work
           </div>

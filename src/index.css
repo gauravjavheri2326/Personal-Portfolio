@@ -68,4 +68,12 @@ html, body{
     .main-heading {
         @apply font-pop-xb tracking-tight uppercase text-[18vw] 2xl:leading-25.5  xl:leading-[6.6vw] leading-[16vw] lg:text-[5rem] lg:leading-20 xl:text-[7.5vw]  2xl:text-[7rem]  
     }
+
+    .link-text {
+        @apply text-[#7546e8] uppercase font-pop-xb text-[15vw]
+    }
+
+    .primary-btn {
+        @apply bg-[linear-gradient(55deg,#7546e8_25%,white_85%)] text-[#1e202c] rounded-full cursor-pointer
+    }
 }

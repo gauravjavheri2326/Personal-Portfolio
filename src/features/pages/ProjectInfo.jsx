@@ -1,9 +1,10 @@
-import React from 'react'
+import { useRef } from 'react'
 import { useParams, Link } from 'react-router'
 import { projects } from '../constants/index.js'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { SplitText, ScrollTrigger } from 'gsap/all'
+import { ArrowUpRight } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -11,6 +12,11 @@ const ProjectInfo = () => {
   const { projectName } = useParams()
 
   const project = projects.find(p => p.name === projectName)
+
+   
+  const linkContRef = useRef()
+  const btnRef = useRef()
+  const arrowRef = useRef()
 
   if (!project) {
     return (
@@ -20,6 +26,28 @@ const ProjectInfo = () => {
       </div>
     )
   }
+
+  // btn mouse enter animation 
+  const btnAnimate1 = () => {
+    gsap.to(btnRef.current, {
+      columnGap: "2vw"
+    })
+
+    gsap.to(arrowRef.current, {
+      transform: "rotate(45deg)"
+    })
+  }
+  
+  const btnAnimate2 = () => {
+    gsap.to(btnRef.current, {
+      columnGap: "0.5vw"
+    })
+
+    gsap.to(arrowRef.current, {
+      transform: "rotate(0deg)"
+    })
+  }
+  
 
   useGSAP(() => {
 
@@ -98,10 +126,53 @@ const ProjectInfo = () => {
       }
     })
 
+    // Project link section — pin and reveal animation
+    const linkTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: linkContRef.current,
+        start: "top top",
+        end: "+=2000",
+        scrub: 1.5,
+        pin: true,
+        markers: true,
+      }
+    })
+
+    linkTl
+      .to(".project-info", {
+        backgroundColor: "black",
+        duration: 0.05,
+        ease: "power2.inOut"
+      })
+      .from("#text1", {
+        xPercent: -200,
+        duration: 0.1,
+        ease: "circ.out"
+      })
+      .from("#text2", {
+        xPercent: 300,
+        duration: 0.1,
+        ease: "circ.out"
+      })
+      .from("#text3", {
+        xPercent: -200,
+        duration: 0.1,
+        ease: "circ.out"
+      })
+      .from(".project-info .primary-btn", {
+        opacity: 0,
+        duration: 0.1,
+        ease: "power1.out"
+      })
+      
+      
+
+      
+
   }, [])
 
   return (
-    <div className=' project-info min-h-screen 2xl:mt-[4vw] xl:mt-[4vw] lg:mt-[5.5vw] md:mt-[9vw] mt-[15vw] 2xl:py-[1.5vw] xl:py-[1.5vw] lg:py-[2.6vw] md:py-[5vw] py-[10vw] lg:px-[2.2vw] md:px-[3vw] px-[2vw]'>
+    <div className='project-info min-h-screen 2xl:mt-[4vw] xl:mt-[4vw] lg:mt-[5.5vw] md:mt-[9vw] mt-[15vw] 2xl:pt-[1.5vw] xl:pt-[1.5vw] lg:pt-[2.6vw] md:pt-[5vw] pt-[10vw] lg:px-[2.2vw] md:px-[3vw] px-[2vw]'>
 
       {/* Project Name  */}
       <div className='overflow-hidden flex items-center 2xl:h-[7vw] xl:h-[7vw] lg:h-[7.6vw] md:h-[10vw] h-[12vw] 2xl:mb-[1.5vw] xl:mb-[1.5vw] lg:mb-[2.1vw] md:mb-[2.5vw] mb-[2vw] '>
@@ -153,7 +224,44 @@ const ProjectInfo = () => {
           />
         </div>
       </div>
-      <div className='h-screen'></div>
+
+      {/* making reponsive is pending */}
+      {/* Site Link  */}
+      <div 
+        ref={linkContRef} 
+        className='h-screen w-full'
+      >
+
+          {/* want ot visit text container  */}
+          <div className='h-[85%] w-full flex flex-col justify-center items-center leading-[12vw]'>
+            <h3 id='text1' className='link-text'>Want</h3>
+            <h3 id='text2' className='link-text'>To</h3>
+            <h3 id='text3' className='link-text'>Visit</h3>
+          </div>
+
+          {/* btn container  */}
+          <div className='w-full flex justify-center'>
+
+            <a
+              ref={btnRef}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              onMouseEnter={btnAnimate1}
+              onMouseLeave={btnAnimate2}
+              className="primary-btn flex items-center justify-center gap-x-[0.5vw] w-[28vw] h-[2.5vw]"
+            >
+
+
+              <span className="text-[1.2vw]">Click Here!</span>
+              <ArrowUpRight ref={arrowRef} className="size-[1.5vw]" />
+              
+            </a>
+
+          </div>
+      </div>
+
+      
 
     </div>
   )

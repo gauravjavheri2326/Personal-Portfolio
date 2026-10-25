@@ -85,10 +85,10 @@ const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
       }}
       ref={navRef} 
-      className={`${isActive ? " bg-[#00000020]" : " bg-[#ffffff00]"} md:h-[7vw] h-[14.5vw] nav-div text-white backdrop-blur-sm w-full flex justify-between  px-7  fixed z-50 border-b border-[#ffffff39] lg:bg-[#ffffff00] lg:h-15 lg:px-13 xl:px-20`}
+      className={`${isActive ? " bg-[#00000020]" : " bg-[#ffffff00]"} 2xl:h-[4vw] lg:h-15 md:h-[7vw] h-[14.5vw] nav-div text-white backdrop-blur-sm w-full flex lg:items-center justify-between  px-7  fixed z-50 border-b border-[#ffffff39] lg:bg-[#ffffff00]  lg:px-13 xl:px-20`}
     >
         {/* Logo  */}
-        <h1 className="absolute font-pop text-[2.5vh] upper mt-[2vh]">GJ</h1>
+        <h1 className="absolute font-pop text-[2.5vh] upper lg:mt-0 mt-[2vh] ">GJ</h1>
 
         {/* Menubar for androids */}
         {
@@ -138,7 +138,7 @@ const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
         {
           !showBack ?
 
-            <div className=" w-full text-[3vh] flex flex-col justify-center items-center gap-10 lg:text-[1rem] lg:gap-8 lg:justify-end lg:flex-row">
+            <div className=" w-full 2xl:text-[1.1vw] xl:text-[1.1vw] text-[3vh] flex flex-col justify-center items-center gap-10 lg:text-[1rem] lg:gap-8 lg:justify-end lg:flex-row">
               <NavA a="Home" ids="#home" isActive={isActive} setIsActive={setIsActive} />
               <NavA a="Services" ids="#services" isActive={isActive} setIsActive={setIsActive} />
               <NavA a="Project" ids="#project-section" isActive={isActive} setIsActive={setIsActive} />
@@ -147,7 +147,7 @@ const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
 
           :
 
-            <div className={`w-full text-[3vh] hidden lg:flex flex-col justify-center items-center gap-10 lg:text-[1rem] lg:gap-8 lg:justify-end lg:flex-row `}>
+            <div className={`w-full hidden lg:flex lg:justify-end lg:flex-row `}>
               <Link
                 to={"/"}
                 onClick={(e) => {
@@ -165,7 +165,7 @@ const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
                   }, 1200)
                 }}
               >
-                <CircleChevronLeft className="hover:text-[#60519b]"/>
+                <CircleChevronLeft className="hover:text-[#60519b] 2xl:size-[1.5vw] xl:size-[1.3vw]"/>
               </Link>
             </div>
 
