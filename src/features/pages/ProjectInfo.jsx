@@ -139,7 +139,7 @@ const ProjectInfo = () => {
         end: "+=2000",
         scrub: 1.5,
         pin: true,
-        markers: true,
+        // markers: true,
       }
     })
 
