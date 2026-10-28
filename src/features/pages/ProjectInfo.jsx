@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { useParams, Link } from 'react-router'
 import { projects } from '../constants/index.js'
 import { useGSAP } from '@gsap/react'
@@ -12,6 +12,11 @@ const ProjectInfo = () => {
   const { projectName } = useParams()
 
   const project = projects.find(p => p.name === projectName)
+
+  // Scroll to top when this page loads
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [projectName])
 
    
   const linkContRef = useRef()
@@ -233,7 +238,7 @@ const ProjectInfo = () => {
       >
 
           {/* want ot visit text container  */}
-          <div className='h-[85%] w-full flex flex-col justify-center items-center leading-[12vw]'>
+          <div className='2xl:h-[82%] xl:h-[80%] lg:h-[80%] md:h-[65%] h-[60%] w-full flex flex-col justify-end items-center  2xl:leading-[14vw] xl:leading-[12vw] lg:leading-[13vw] md:leading-[20vw] leading-[19vw]'>
             <h3 id='text1' className='link-text'>Want</h3>
             <h3 id='text2' className='link-text'>To</h3>
             <h3 id='text3' className='link-text'>Visit</h3>
@@ -249,12 +254,12 @@ const ProjectInfo = () => {
               rel="noopener noreferrer"
               onMouseEnter={btnAnimate1}
               onMouseLeave={btnAnimate2}
-              className="primary-btn flex items-center justify-center gap-x-[0.5vw] w-[28vw] h-[2.5vw]"
+              className="primary-btn flex items-center justify-center gap-x-[0.5vw] 2xl:w-[31vw] xl:w-[28vw] lg:w-[27vw] md:w-[40vw] w-[50vw] 2xl:h-[3vw] xl:h-[2.5vw] lg:h-[2.6vw] md:h-[5vw] h-[7vw]"
             >
 
 
-              <span className="text-[1.2vw]">Click Here!</span>
-              <ArrowUpRight ref={arrowRef} className="size-[1.5vw]" />
+              <span className="2xl:text-[1.6vw] xl:text-[1.2vw] lg:text-[1.55vw] md:text-[3vw] text-[4vw] ">Click Here!</span>
+              <ArrowUpRight ref={arrowRef} className="2xl:size-[1.9vw] xl:size-[1.5vw] lg:size-[1.85vw] md:size-[3.3vw] size-[4.5vw]" />
               
             </a>
 

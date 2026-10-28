@@ -70,10 +70,10 @@ html, body{
     }
 
     .link-text {
-        @apply text-[#7546e8] uppercase font-pop-xb text-[15vw]
+        @apply text-[#7546e8] pointer-events-none uppercase font-pop-xb 2xl:text-[17vw] xl:text-[15vw] lg:text-[16vw] md:text-[25vw] text-[23vw]
     }
 
     .primary-btn {
-        @apply bg-[linear-gradient(55deg,#7546e8_25%,white_85%)] text-[#1e202c] rounded-full cursor-pointer
+        @apply bg-[linear-gradient(55deg,#7546e8_25%,white_85%)] text-[#1e202c] rounded-full cursor-pointer 
     }
 }

@@ -9,7 +9,7 @@ import { ProjectContext } from "../project.context.jsx"
 
 const ProjectSlider = () => {
 
-    const { setNavigate, setShowBack } = useContext(ProjectContext)
+    const { setNavigate } = useContext(ProjectContext)
 
     const navigate = useNavigate()
 
@@ -125,7 +125,6 @@ const ProjectSlider = () => {
 
                                             setTimeout(() => {
                                                 navigate(`/project-info/${project.name}`)
-                                                setShowBack(true)
                                             }, 500)
                                             
                                             setNavigate(true)

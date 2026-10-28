@@ -14,7 +14,7 @@ import gsap from 'gsap'
 
 const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
 
-  const { showBack, setShowBack, setNavigate } = useContext(ProjectContext)
+  const { showBack, setNavigate } = useContext(ProjectContext)
 
   const navigate = useNavigate()
 
@@ -118,13 +118,7 @@ const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
                   setNavigate(true)
                   setTimeout(() => {
                     navigate("/")
-                    setShowBack(false)
                   }, 500)
-                  setTimeout(() => {
-                    document.getElementById("project-section")?.scrollIntoView({
-                      behavior: "smooth"
-                    })
-                  }, 1200)
                 } }
               >
                 <CircleChevronLeft/>
@@ -156,13 +150,13 @@ const Navbar = ({ isActive, setIsActive, lenisRef  }) => {
                   setNavigate(true)
                   setTimeout(() => {
                     navigate("/")
-                    setShowBack(false)
+                    setTimeout(() => {
+                      document.getElementById("project-section")?.scrollIntoView({
+                        behavior: "smooth"
+                      })
+                    }, 1200)
+
                   }, 500)
-                  setTimeout(() => {
-                    document.getElementById("project-section")?.scrollIntoView({
-                      behavior: "smooth"
-                    })
-                  }, 1200)
                 }}
               >
                 <CircleChevronLeft className="hover:text-[#60519b] 2xl:size-[1.5vw] xl:size-[1.3vw]"/>
